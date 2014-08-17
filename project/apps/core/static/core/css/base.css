@@ -1,0 +1,160 @@
+/*** BASE STYLES ***/article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{height:100%;font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select,textarea{font-family:sans-serif}body{margin:0;min-height:100%;height:100%;}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height: auto;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top;height:75px;}table{border-collapse:collapse;border-spacing:0}body{color:#000;font-family:Helvetica,arial,sans-serif;font-size:14px;line-height:1.5}a{color:#07c;text-decoration:none}a:hover,a:focus,a:active{cursor:pointer;text-decoration:underline}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}img{vertical-align:middle}
+/*** SCROLLBAR STYLES ***/::-webkit-scrollbar{width:14px;height:14px;}::-webkit-scrollbar-track{background:#fff;border-right:2px solid #fff;}::-webkit-scrollbar-thumb{background-color: rgba(0, 0, 0, 0.2);-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),inset 0 -1px 0 rgba(0, 0, 0, 0.07);border-right:2px solid #fff;}::-webkit-scrollbar-thumb:hover{background-color: rgba(0, 0, 0, 0.4);}::-webkit-scrollbar-button{width: 14px;height: 14px;}::-webkit-scrollbar-corner {background-color: rgba(0, 0, 0, 0);width:14px;height:14px;}
+/*** DEFAULT TABLE STYLES ***/
+table{width: 100%;margin-top: 20px;}
+table thead {background-color: #f1f1f1;}
+table thead th { vertical-align: middle; color: #666; text-transform:uppercase; padding:5px; text-align: left; }
+table tbody tr {border-bottom: solid 1px #ebebeb; }
+table tbody tr:hover {background-color: #D8E7F1;}
+table tr.selected{ background-color: #dbe7f1;}
+table tbody tr:not(.selected):hover {background-color: #f6f9fb;}
+table tbody td{ vertical-align: middle; text-align: left; padding: 5px 10px 5px 5px;}
+table th:not(:first-child), table td:not(:first-child){ 
+    border-left:1px solid transparent; 
+}
+table th:not(:first-child),
+table tr:hover td:not(:first-child){border-left:1px solid #fff; }
+table td.title{ width: 25%; }
+/*** UTILITY CLASSES 
+  grid, grid-cell - for a grid layout(50% grid cells. Change width on grid-cell)
+    *** usage: <div class="grid"><div class="grid-cell"></div> <div class="grid-cell"></div> </div>
+  inline-block-list - used for displaying a list inline
+    *** usage: <ul class="inline-block-list"><li></li></ul>
+  aside - gives a nice grey container
+  container - gives a container centered to  
+***/
+.cf:before,.cf:after{content:" ";display:table}.cf:after{clear:both}.clearfix{*zoom:1}.clearfix:before,.clearfix:after{content:"";display:table;}.clearfix:after{clear:both;}.inactive{opacity:.3;}.f-left{float:left!important;}.f-right{float:right!important;}.a-left{text-align:left!important;}.a-right{text-align:right!important;}.a-center{text-align:center!important;}div.box-center{margin-left:auto;margin-right:auto;float:none;}.clear{clear:both!important;}.relative{position:relative!important;}.block{display:block;}.transparent{background:transparent!important;}.hidden {display:none !important;}
+.grid{margin:0 -15px;letter-spacing:-.31em;word-spacing:-.43em;text-rendering:optimizespeed}
+.grid-cell{display:inline-block;vertical-align:top;width:50%;letter-spacing:normal;word-spacing:normal;text-align:left;text-rendering:auto}
+.grid-cell>*{padding:0 15px}
+.inline-block-list{padding:0;margin:0;list-style:none}
+.inline-block-list li{display:inline-block;padding:0;margin:0 0 0 1.5em;vertical-align:middle}
+.inline-block-list li:first-child{margin-left:0}
+.container{padding:0 20px 40px;margin:0 auto}
+.aside{padding:1em 0;border:solid #e3e3e3;border-width:1px 0;background:#eee;font-size:1.125em}
+.even, .even td {background:#f7f7f7; border-bottom:1px solid #ccc;}
+.odd, .odd td{ background:#fff; border-bottom: 1px solid #ddd; }
+.disp-table{display:table;}.disp-table-row{display:table-row;}.disp-table-cell{display:table-cell;}
+ul.unstyled{margin:0;padding:0; list-style:none;}
+/*** FIELDSET FORM ***/
+form.fieldset{font-size: 12px; margin:0;padding: 5px 10px;}
+
+fieldset.form-fieldset{ display: block; clear:both; width: 100%; margin: 0; padding:0; border:none;}
+fieldset.form-fieldset legend{ width: 100%; margin: 0; padding: 0; }
+fieldset.form-fieldset legend span{ display: block;font-size: 11px;font-weight:bold; padding: 5px 0 5px 0px;text-transform:uppercase;}
+fieldset.form-fieldset .field-wrapper{margin-bottom:15px; }
+fieldset.form-fieldset .field-wrapper .label { 
+    display:inline-block; width:30%; margin: 0px; padding-right: 12px; vertical-align:top; 
+}
+fieldset.form-fieldset .field { display:inline-block; clear:right; width: 65%; padding-left: 4px;}
+fieldset.form-fieldset .required .field { 
+  background: url('../../core/img/icons/asterisk.png') no-repeat top left;
+}
+fieldset.form-fieldset .field input[type="text"], 
+fieldset.form-fieldset .field input[type="password"], 
+fieldset.form-fieldset .field input[type="search"],
+fieldset.form-fieldset .field input[type="email"],
+fieldset.form-fieldset .field textarea{width:100%;}
+fieldset.form-fieldset div.field-wrapper .help-text, 
+.field-wrapper .help-text{ 
+    font-size: 11px; font-style: italic; background-color: white;
+    display: none; position: absolute; margin-left: 25px;
+    min-width: 100px; padding: 5px; border: 1px solid black;
+}
+fieldset.form-fieldset div.field-wrapper .help-icon, 
+.field-wrapper .help-icon{
+    display: inline-block; height: 16px; width: 16px;margin-left: 10px;
+    background: url('../../core/img/icons/help_info.png') center center no-repeat;    
+}
+fieldset.form-fieldset div.field-wrapper .help-icon:hover .help-text, 
+.field-wrapper .help-icon:hover .help-text{ display:inline-block; }
+
+fieldset.form-fieldset .field ul { list-style : none; display:inline-block;}
+fieldset.form-fieldset .field ul li{ margin-bottom: 10px; float:left; margin-right: 10px;}
+
+form.fieldset .submit-wrapper{display:block; position:absolute; bottom:20px; right: 20px;}
+
+/*** DIALOG FORM ***/
+.dialog-form { padding: 5px 10px; color: black; }
+.dialog-form .field-wrapper{ display:block; margin-bottom:15px; }
+.dialog-form .label { 
+    display:inline-block;width:30%; text-transform:capitalize; 
+    vertical-align:top; text-align:left; padding-right: 12px; 
+}
+.dialog-form .required .field{ 
+    background: url('../../core/img/icons/asterisk.png') no-repeat top left; 
+    padding-left: 4px;
+}
+.dialog-form .field { display:inline-block; clear:right; width: 65%; padding-left: 4px;}
+.dialog-form .field input[type="text"], 
+.dialog-form .field input[type="password"], 
+.dialog-form .field input[type="search"],
+.dialog-form .field input[type="email"],
+.dialog-form .field textarea{width:100%;}
+.dialog-form .field ul{list-style:none;display:inline-block;}
+.dialog-form .field ul li{ margin-bottom: 10px; float:left; margin-right: 10px;}
+.dialog-form .field ul label {text-align: left;}
+.dialog-form .errors {font-size: 12px;}
+.dialog-form .submit-wrapper{display:block; position:absolute; bottom:20px; right: 20px;}
+/*** 2 Column (left menu) settings 
+Zen: div.colmask.leftmenu>div.colleft>(div.col1.main-section+div.col2.side-section)
+Web: http://matthewjamestaylor.com/blog/perfect-3-column.htm
+***/
+.colmask {
+  position:relative;  /* This fixes the IE7 overflow hidden bug */
+  clear:both;
+  float:left;
+  width:100%;     /* width of whole page */
+  overflow:visible;    /* This chops off any overhanging divs */
+  border: 1px solid #ccc;
+  min-height: 450px
+}
+.colright,
+.colmid,
+.colleft {
+  float:left;
+  width:100%;
+  position:relative;
+  min-height: 550px;
+}
+.col1,
+.col2,
+.col3 {
+  float:left;
+  position:relative;
+  padding:0 0 1em 0;
+  overflow:visible;
+}
+.leftmenu {
+  background:#fff;    /* right column background colour */
+  margin-top:10px; margin-bottom: 10px; 
+}
+.leftmenu .colleft {
+  right:81%;      /* right column width */
+}
+.leftmenu .col1 {
+  width:81%;      /* right column content width */
+  left:100%;      /* 100% plus left column left padding */
+  min-height: 550px;
+}
+.leftmenu .col2 {
+  left:0%;      /* (right column left and right padding) plus (left column left padding) */
+  width:19%;      /* left column content width (column width minus left and right padding) */
+  min-height:550px;
+}
+/*** Expandos styles ***/
+ul li.expandos > a{
+    background: url('../../core/img/icons/arrow_right.png') no-repeat center left; 
+    padding-left: 15px;
+    font-weight:bold;
+}
+ul li.expandos.open > a{
+    background: url('../../core/img/icons/arrow_down.png') no-repeat center left; 
+}
+ul li.expandos ul{
+    display: none;
+}
+ul .expandos.open ul{
+    display: block;
+    margin:0;
+}

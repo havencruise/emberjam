@@ -1,0 +1,13 @@
+# Operating system stuff
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Django stuff:
+*.log
+*.pot
+
+# Environment stuff
+env/
