@@ -27,19 +27,16 @@
   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
   <link href="https://plus.google.com/123456789012345678901" rel="publisher" />
 
-  {% block head-css %}
-
-  {% endblock head-css %}
+  {% block head-css %}{% endblock head-css %}
 
   {% block head-js %}
   <script type="text/javascript">
     var _MEDIA_URL = "{{MEDIA_URL}}";
     var _STATIC_URL = "{{STATIC_URL}}";
     {% if request.user.id %}
-      var _USER_ID = {{request.user.id}};
-      var _USER_NAME = "{{request.user.username}}";
-    {% else %}
-      var _USER_ID = -1;
+      var _USER_ID = {{request.user.id}}, _USER_NAME = "{{request.user.username}}"; 
+    {% else %} 
+      var _USER_ID = -1; 
     {% endif %}
   </script>
   {% endblock head-js %}
@@ -49,47 +46,17 @@
 
 {% endblock head %}
 </head>
-
 <body class="{% block body-class %}{% endblock %}">
-  <div class="container">
-    <header class="clearfix">
-
-      <a href="/" class="logo">
-        <img src="" title="Default logo, please change"/> 
-        Site Name
-      </a>
-
-      <ul class="clearfix f-right account">
-        {% if request.user.id %}
-          <li class="username">{{request.username}}</li>
-          <li><a href="#">Logout</a></li>
-        {% else %}
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
-        {% endif %}
-          <li><input type="search" /></li>
-      </ul>
-
-
-      <nav class="f-right">
-        <ul class="clearfix">
-          <li><a href="/">Nav 1</a>
-        </ul>
-      </nav>
-
-    </header>
-
-    <div id="body">
-    {% block body %}
-
-    You need to update body tag for there to be anything here....
-
-    {% endblock %}
+  {% block body %}
+    <header class="clearfix"></header>
+    {% block body-main %}
+    <div class="container">
+      <div id="body">
+        You need to update body tag for there to be anything here....
+      </div>
+    {% endblock body-main %}
+    <footer class="clearfix"> </footer>
     </div>
-
-    <footer class="clearfix">
-      
-    </footer>
-  </div>
+  {% endblock body %}
 </body>
 </html>

@@ -1,1 +1,1 @@
-# Test with Django Authenticate using EmberJS
+# Django Backend with EmberJS UI

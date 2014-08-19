@@ -7,6 +7,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'core.middleware.BaseTemplateSetter'
 )
 
@@ -18,10 +19,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django.contrib.staticfiles',
     'django_extensions',
     'south',
-    'pipeline',
-    'core'
+    'rest_framework',
+    'core',
+    'snippets'
 )
 
 SECRET_KEY = '2y%jux-*3x6-w!x7+4zl_fybxv)306r&@mu^r8@$xbzopqgg7u'
