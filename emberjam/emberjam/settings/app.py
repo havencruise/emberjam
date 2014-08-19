@@ -24,7 +24,9 @@ INSTALLED_APPS = (
     'south',
     'rest_framework',
     'core',
-    'snippets'
+    'snippets',
+    'accounts',
+    'ember'
 )
 
 SECRET_KEY = '2y%jux-*3x6-w!x7+4zl_fybxv)306r&@mu^r8@$xbzopqgg7u'

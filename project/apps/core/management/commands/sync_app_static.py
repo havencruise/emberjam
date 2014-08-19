@@ -27,13 +27,14 @@ class Command(AppCommand):
 
         app_media_dir =  "%s/static/%s" % (
                             "/".join(app.__file__.split('/')[:-1]),
-                            app.__package__)
+                            app.__name__.split('.')[0])
         if WINDOWS:
             app_media_dir =  "%s\\static" % "\\".join(app.__file__.split('\\')[:-1])
 
 
         app_name = app.__name__.split('.')[-2]
         media_dir = '%s/%s' % (settings.STATIC_ROOT, app_name)
+
 
         if not os.path.exists(app_media_dir):
             if verbosity > 0:

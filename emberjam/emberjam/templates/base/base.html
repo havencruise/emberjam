@@ -12,22 +12,10 @@
   <meta name="keywords"     content="" />
   <meta name="description"  content="" />
 
-  <!-- Meta for Facebook like button -->
-  <!-- Refer http://developers.facebook.com/docs/opengraph/objects/builtin/ for more OpenGraph properties -- >
-  <meta property="og:type"      content="Website" />
-  <meta property="og:image"     content=""/>
-  <meta property="og:site_name" content=""/>
-
-  <!-- Meta for Google +1 button -->
-  <!-- Refer http://schema.org/docs/gs.html#microdata_itemscope_itemtype for more microdata -->
-  <meta itemprop="name"     content="" />
-  <meta itemprop="image"    content="" />
-
-  <!-- Place the following lines out of the comment tag to link to your Google Plus Page and change the PageID -->
-  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-  <link href="https://plus.google.com/123456789012345678901" rel="publisher" />
-
-  {% block head-css %}{% endblock head-css %}
+  {% block head-css %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  {% endblock head-css %}
 
   {% block head-js %}
   <script type="text/javascript">
@@ -43,20 +31,24 @@
 
   {% block head-extra-js %}{% endblock %}
   {% block head-extra-css %}{% endblock %}
-
 {% endblock head %}
 </head>
+
 <body class="{% block body-class %}{% endblock %}">
-  {% block body %}
-    <header class="clearfix"></header>
-    {% block body-main %}
-    <div class="container">
-      <div id="body">
-        You need to update body tag for there to be anything here....
-      </div>
-    {% endblock body-main %}
-    <footer class="clearfix"> </footer>
-    </div>
-  {% endblock body %}
+  {% load static %}
+  {% block body %} {% endblock body %}
+  {% block ember-js %}
+    {# This is here so that its non-blocking #}
+    <script src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'core/js/modernizr-2.8.0.min.js' %}"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'ember/js/handlebars-1.0.0.js' %}"></script>
+    <script src="{% static 'ember/js/ember.js' %}"></script>
+    <script src="{% static 'ember/js/ember-data.js' %}"></script>
+  {% endblock ember-js %}
+
+  {% block ember-extra-js %} 
+    <script src="{% static 'ember/js/app/app.js' %}"></script>
+  {% endblock ember-extra-js %}
 </body>
 </html>
