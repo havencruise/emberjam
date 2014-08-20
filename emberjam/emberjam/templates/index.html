@@ -1,1 +1,10 @@
 {% extends 'base/base.html' %}
+{% load static compress %}
+
+{% block ember-extra-js %}
+
+{% compress js %}
+    <script type="text/x-handlebars" src="{% static 'ember/js/app/templates/application.handlebars' %}" ></script>
+{% endcompress js %}
+
+{% endblock ember-extra-js%}

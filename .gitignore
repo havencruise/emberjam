@@ -11,3 +11,5 @@ __pycache__/
 
 # Environment stuff
 env/
+resources/CACHE/
+db.sqlite3

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "django-ember-precompile": "1.0.9"  
+  }
+}

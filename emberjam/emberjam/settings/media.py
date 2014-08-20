@@ -23,3 +23,10 @@ COMPRESS_CSS = {
     },
 }
 PIPELINE_CSS = COMPRESS_CSS
+
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
