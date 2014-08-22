@@ -19,6 +19,7 @@
   {% endblock head-css %}
 
   {% block head-js %}
+  
   <script type="text/javascript">
     var _MEDIA_URL = "{{MEDIA_URL}}";
     var _STATIC_URL = "{{STATIC_URL}}";
@@ -28,6 +29,17 @@
       var _USER_ID = -1; 
     {% endif %}
   </script>
+  <script src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
+  <script>
+    jQuery(document).ajaxSend(function(event, xhr, settings) {
+      if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+        var token = $('meta[name="csrf-token"]').attr('content');
+        xhr.setRequestHeader("X-CSRFToken", token);
+      }
+    });
+  </script>
+  <script src="{% static 'core/js/modernizr-2.8.0.min.js' %}"></script>
+
   {% endblock head-js %}
 
   {% block head-extra-js %}{% endblock %}
@@ -38,25 +50,6 @@
 <body class="{% block body-class %}{% endblock %}">
   
   {% block body %} {% endblock body %}
-  {% block ember-js %}
-    {# This is here so that its non-blocking #}
-    <script src="{% static 'core/js/jquery-1.10.2.min.js' %}"></script>
-    <script>
-      jQuery(document).ajaxSend(function(event, xhr, settings) {
-        if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
-          var token = $('meta[name="csrf-token"]').attr('content');
-          xhr.setRequestHeader("X-CSRFToken", token);
-        }
-      });
-    </script>
-    <script src="{% static 'core/js/modernizr-2.8.0.min.js' %}"></script>
-    <script src="{% static 'ember/js/handlebars.js' %}"></script>
-    <script src="{% static 'ember/js/ember.js' %}"></script>
-    <script src="{% static 'ember/js/ember-data.js' %}"></script>
-    <script src="{% static 'ember/js/adapter.js' %}"></script>
-    <script src="{% static 'ember/js/app/app.js' %}"></script>
-  {% endblock ember-js %}
-
-  {% block ember-extra-js %} {% endblock ember-extra-js %}
+  
 </body>
 </html>

@@ -27,6 +27,7 @@ INSTALLED_APPS = (
     'core',
     'snippets',
     'accounts',
+    'rest_framework.authtoken'
 )
 
 SECRET_KEY = '2y%jux-*3x6-w!x7+4zl_fybxv)306r&@mu^r8@$xbzopqgg7u'

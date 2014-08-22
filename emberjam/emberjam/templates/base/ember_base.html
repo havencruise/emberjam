@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static compress %}
+
+{% block body %}
+    {% block ember-js %}
+        {# This is here so that its non-blocking #}
+        <script src="{% static 'ember/js/handlebars.js' %}"></script>
+        <script src="{% static 'ember/js/ember.js' %}"></script>
+        <script src="{% static 'ember/js/ember-data.js' %}"></script>
+        <script src="{% static 'ember/js/adapter.js' %}"></script>
+        <script src="{% static 'ember/js/app/app.js' %}"></script>
+    {% endblock ember-js %}
+
+
+{% block ember-extra-js %} {% endblock ember-extra-js %}
+
+{% endblock %}

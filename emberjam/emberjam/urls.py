@@ -11,11 +11,17 @@ def default_view(request):
     return {}
 
 
+@render_to('base/base.html')
+def index(request):
+    return {}
+
+
 urlpatterns = patterns('',
     (r'^$', 'urls.default_view'),
+    (r'^index/$', 'urls.index'),
     (r'^__admin__/', include(admin.site.urls)),
-    (r'^accounts/', include('accounts.urls')),
-    (r'^snippets/', include('snippets.urls')),
+    (r'^accounts/', include('django.contrib.auth.urls')),
+    # (r'^snippets/', include('snippets.urls')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
