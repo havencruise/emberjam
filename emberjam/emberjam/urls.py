@@ -19,8 +19,9 @@ def index(request):
 urlpatterns = patterns('',
     (r'^$', 'urls.default_view'),
     (r'^index/$', 'urls.index'),
+    (r'^api-token-auth/', 'rest_framework.authtoken.views.obtain_auth_token'),
     (r'^__admin__/', include(admin.site.urls)),
-    (r'^accounts/', include('django.contrib.auth.urls')),
+    (r'^accounts/', include('accounts.urls')),
     # (r'^snippets/', include('snippets.urls')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
